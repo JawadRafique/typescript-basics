@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Form } from "./components/Form";
+import { GenericData } from "./components/GenericData";
+import { Test } from "./components/Test";
+import { User } from "./components/User";
+
+const data = {
+    name: "jawad",
+    age: 25,
+};
+
+const users = [
+    {
+        name: "J",
+        age: 24,
+    },
+    {
+        name: "Jk",
+        age: 26,
+    },
+    {
+        name: "JKL",
+        age: 22,
+    },
+];
+
+const orders = [
+    {
+        name: "pelao",
+        price: 240,
+    },
+    {
+        name: "biryani",
+        price: 2400,
+    },
+    {
+        name: "makhni",
+        price: 240000,
+    },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Test data={data} />
+            <User />
+            <Form />
+            <GenericData items={users} />
+            <GenericData items={orders} />
+            {/* <h3>{name}</h3> */}
+        </>
+    );
 }
 
 export default App;
